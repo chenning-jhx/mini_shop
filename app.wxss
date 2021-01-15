@@ -1,0 +1,14 @@
+/*
+设置公共样式
+*/
+page, view, text, swiper, seiper-item, navigator {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+page {
+  --themecolor: #eb4450;
+  font-size: 28rpx;
+}
+

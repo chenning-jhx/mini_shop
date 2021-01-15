@@ -1,0 +1,32 @@
+<view class="minishop_index">
+  <!-- 搜索输入框 -->
+  <searchInput></searchInput>
+  <!-- 轮播图区域开始 -->
+  <view class="index_swiper">
+    <swiper autoplay indicator-dots circular>
+      <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
+        <image mode="widthFix" src="{{item.image_src}}" />
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 轮播图区域结束 -->
+  <!-- 首页导航区域开始 -->
+  <view class="index_nav">
+    <view wx:for="{{navList}}" wx:key="name">
+      <image mode="widthFix" src="{{item.image_src}}" />
+    </view>
+  </view>
+  <!-- 首页导航区域结束 -->
+  <!-- 楼层显示区域开始 -->
+  <view class="index_floor">
+    <view class="floor_group" wx:for="{{floorList}}" wx:for-item="item1" wx:for-index="index1" wx:key="index1">
+      <view class="floor_title">
+        <image src="{{item1.floor_title.image_src}}" />
+      </view>
+      <view class="floor_img" wx:for="{{item1.product_list}}" wx:for-item="item2" wx:for-index="index2" wx:key="name">
+        <image src="{{item2.image_src}}" /> 
+      </view>
+    </view>
+  </view>
+  <!-- 楼层显示区域结束 -->
+</view>

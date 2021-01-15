@@ -1,0 +1,28 @@
+@font-face {font-family: "iconfont";
+  src: url('//at.alicdn.com/t/font_2329080_ol0fd7clt08.eot?t=1610682244221'); /* IE9 */
+  src: url('//at.alicdn.com/t/font_2329080_ol0fd7clt08.eot?t=1610682244221#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAQkAAsAAAAACMQAAAPYAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDFAqEfIQcATYCJAMQCwoABCAFhG0HUxuRB1GUDkqI7MeAu3FWvqRoKSTVImXSOZn5O5k9GSOo1rCe3Q2iAkWg4rl8FIEKC8cOWMa5CB8djS/UqxvMI9OjwO0Jd2vODKhg57aLm2JZNSKF/u+bAqWAwqv9zzHTZYLlXyXI3tSqmtY4HOB4nGBx3bZ3gPcO5A7swPSG6eVrCIP5NIFGA7hAS+fnB4YKflIgTl1bwDAWVEqYod5Tm3NliXhVoz7dpS3Ai/v78Y9AoJHUZPzM5f2TCdsv8KIjXldxYMtGMPUXB7uOjElAIfZykxs6fnMSokZNtWsaUKuMp694aYFh+jS4QeZpmv8/XpKJWtzZDLEzrcwXKBB8SUl86UEZosvx9WjABwD/AbZvtCiiA58HCf5JFDbHKZnD7dVxVW1DGSMdNfG1naP2icPYZjaXlxEZVY1h4BjjZoK4NhacjI6OGhKTExMlo6WiAorvZMYsjxGTF8tFU3v7GHv3pxtDC/MuvlimnavskRUzLCYmFRMsTWNkRlxvH6KsntzYqKyavH2V1dS4GbN51/Rn2lmr5UbIXfbA+lDOw0ZT7o6UUc9AhNLl9ymSDOuXuC+nnlWm+n+CJq51fRY7ocC2ROHnIJLpIyca4Grg4f1P4EoWo42rs6yqEE/YuRJn7bPLkdJIm5RYxEGMYySAuRkRdRdJGjaeLpvc0xARN6LysH5gRpkaXh6xaV+vxU4pcCyR+TmIuajJifqpBzpHuTBkj9TExkndiDIPvrm2iQ9tSEqqS5yxLmCbwI1+8ql43uFyenxe5kjobB2fDoWTdLF5/VPWACoskr2oNL+5a/hpqjL2N+3KaS9vWwS3/IDqF9yO+DUrAVTliL+zzf8/nISEnK//hqOcPTg12+JKfUPDvCSVzxlfkqtvZ6rXTb1EbdO79xekEsRfq27hwVKsYPXLbUT1HwRNWdF5PaFRVKgAz3a66cPVM4LRTtfrCSGp0w9ZvUFkwU5CjSYzUKveLDSaoHp9ky4BOqI0YFwygNCuF5JW75C120YW7DXU6PUVarUHIjRaCcI7NhkOd0UxJZGTiQ7h6O7IkSUjueL1v8guApFGLS7rR2nmVpCfhy/ZuVBEaR/nBIbYm6AgC10COEQV8DwKAka/APZI5gu3oDw2eHld8j5p4egbgmJRigg5YkIOGsidxCKWPTunpH7+hdgKASEtmahp/pBUxt0c8ePBVwN5cUa1Js5le6CSbSNIzsLHuUixEFKBcRKIJkN++fs8RMotuLWoxwy8aJpLXedifHd4heegEX9xiRQ5StRoPuCiKqRDPke2GhkJRaQ5chDssv54CnMHAA==') format('woff2'),
+  url('//at.alicdn.com/t/font_2329080_ol0fd7clt08.woff?t=1610682244221') format('woff'),
+  url('//at.alicdn.com/t/font_2329080_ol0fd7clt08.ttf?t=1610682244221') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('//at.alicdn.com/t/font_2329080_ol0fd7clt08.svg?t=1610682244221#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-gouwuchekong:before {
+  content: "\e600";
+}
+
+.icon-gouwucheman:before {
+  content: "\e601";
+}
+
+.icon-collection-b:before {
+  content: "\e60d";
+}
