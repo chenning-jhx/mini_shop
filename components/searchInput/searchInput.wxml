@@ -1,5 +1,5 @@
-<view class="search-input">
-  <navigator class="search-nav" url="pages/search/serach" open-type="navigate">
-    搜索
-  </navigator>
+<view class="search">
+  <view class="search-input">
+    <view class="search-nav">搜索</view>
+  </view>
 </view>

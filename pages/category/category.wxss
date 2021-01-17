@@ -1,1 +1,61 @@
-/* pages/category/category.wxss */
+page {
+  height: 100%;
+}
+.cates {
+  height: 100%;
+}
+.cates .cate_group {
+  display: flex;
+  height: calc(100vh - 90rpx);
+}
+.cates .cate_group .left_menu {
+  flex: 2;
+  height: 100%;
+  background-color: #f4f4f4;
+}
+.cates .cate_group .left_menu .menu_list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100rpx;
+  font-size: 40rpx;
+  color: #1e1e1e;
+  border-bottom: 1rpx solid #cdcdcd;
+}
+.cates .cate_group .left_menu .active {
+  background-color: #fff;
+  color: var(--themecolor);
+  border-left: 8rpx solid currentColor;
+}
+.cates .cate_group .right_content {
+  flex: 5;
+  height: 100%;
+}
+.cates .cate_group .right_content .right_list {
+  overflow: hidden;
+}
+.cates .cate_group .right_content .right_list .right_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+}
+.cates .cate_group .right_content .right_list .right_title .title_content {
+  font-size: 40rpx;
+}
+.cates .cate_group .right_content .right_list .right_title .title_content::before,
+.cates .cate_group .right_content .right_list .right_title .title_content::after {
+  content: "/";
+  color: #cecece;
+  padding: 20rpx;
+}
+.cates .cate_group .right_content .right_list .right_image {
+  float: left;
+  width: 33.3%;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+.cates .cate_group .right_content .right_list .right_image image {
+  width: 50%;
+}

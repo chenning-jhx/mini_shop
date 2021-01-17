@@ -1,0 +1,16 @@
+.tabs .tabs_title {
+  display: flex;
+  height: 80rpx;
+}
+.tabs .tabs_title .tabs_item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32rpx;
+  color: #666;
+}
+.tabs .tabs_title .active {
+  color: var(--themecolor);
+  border-bottom: 4rpx solid currentColor;
+}

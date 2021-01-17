@@ -1,1 +1,25 @@
-/* pages/goods_list/goods_list.wxss */
+.goods_list .good_info {
+  display: flex;
+  padding: 10rpx;
+}
+.goods_list .good_info .good_image {
+  flex: 2;
+}
+.goods_list .good_info .good_image image {
+  width: 70%;
+}
+.goods_list .good_info .good_description {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.goods_list .good_info .good_description .good_title {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.goods_list .good_info .good_description .good_price {
+  color: var(--themecolor);
+}

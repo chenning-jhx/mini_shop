@@ -21,10 +21,10 @@
   <view class="index_floor">
     <view class="floor_group" wx:for="{{floorList}}" wx:for-item="item1" wx:for-index="index1" wx:key="index1">
       <view class="floor_title">
-        <image src="{{item1.floor_title.image_src}}" />
+        <image mode="widthFix" src="{{item1.floor_title.image_src}}" />
       </view>
       <view class="floor_img" wx:for="{{item1.product_list}}" wx:for-item="item2" wx:for-index="index2" wx:key="name">
-        <image src="{{item2.image_src}}" /> 
+        <image mode="{{index2 === 0 ? 'widthFix' : 'scaleToFill'}}" src="{{item2.image_src}}" /> 
       </view>
     </view>
   </view>
