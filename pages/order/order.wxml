@@ -1,2 +1,17 @@
-<!--pages/order/order.wxml-->
-<text>pages/order/order.wxml</text>
+<view class="order">
+    <tabs tabs="{{tabs}}" bindhandleTab="handeleTap"></tabs>
+    <view class="order_detail" wx:for="{{orderData}}">
+        <view class="order_num">
+            <view class="order_num_title">订单编号</view>
+            <view class="order_num_detail"></view>
+        </view>
+        <view class="order_price">
+            <view class="order_price_title">订单价格</view>
+            <view class="order_price_detail"></view>
+        </view>
+        <view class="order_data">
+            <view class="order_data_title">订单日期</view>
+            <view class="order_data_detail"></view>
+        </view>
+    </view>
+</view>

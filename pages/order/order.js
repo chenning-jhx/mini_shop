@@ -1,11 +1,35 @@
-// pages/order/order.js
+import { request } from '../../request/index'
+import regeneratorRuntime from '../../lib/runtime/runtime';
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    tabs: [
+      {
+        value: "全部",
+        id: 0,
+        isActived: true
+      },
+      {
+        value: "待付款",
+        id: 1,
+        isActived: false
+      },
+      {
+        value: "待发货",
+        id: 2,
+        isActived: false
+      },
+      {
+        value: "退款/退货",
+        id: 3,
+        isActived: false
+      }
+    ],
+    orderData: []
   },
 
   /**
@@ -26,7 +50,38 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.getOrderData()  
+  },
 
+  //获取订单数据
+  async getOrderData() {
+    //查询下缓存中是否有token值
+    const token = wx.getStorageSync("token");
+    if(!token) {
+      wx.navigateTo({
+        url: '../auth/auth'
+      });
+    }
+
+    //获取用户传递过来的type参数
+    const { options } =  getCurrentPages()[0];
+    const res = await request({url:"/my/orders/all",data:options})
+    const orderData = res.data.message.orders
+    this.setData({
+      orderData
+    })
+  },
+
+  //监听tabs点击事件
+  handeleTap(e) {
+    const { index } = e.detail;
+    const { tabs } = this.data;
+    tabs.forEach((item, i) => {
+      i === index ? item.isActived = true : item.isActived = false
+    })
+    this.setData({
+      tabs
+    })
   },
 
   /**

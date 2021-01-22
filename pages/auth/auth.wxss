@@ -1,1 +1,7 @@
-/* pages/auth/auth.wxss */
+.empower {
+    margin-top: 20rpx;
+}
+
+.empower button {
+        width: 60%;
+}

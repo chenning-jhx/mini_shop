@@ -4,5 +4,6 @@
     "tabs": "../../components/tabs/tabs"
   },
   "navigationBarTitleText": "商品列表",
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
 }

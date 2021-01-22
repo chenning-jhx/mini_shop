@@ -1,1 +1,103 @@
-/* pages/goods_detail/goods_detail.wxss */
+page {
+  padding-bottom: 90rpx;
+}
+.goods_detail {
+  padding: 20rpx;
+}
+.goods_detail swiper {
+  height: 65vw;
+}
+.goods_detail swiper .swiper_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.goods_detail swiper .swiper_item image {
+  width: 60%;
+}
+.goods_detail .goods_price {
+  border-top: 10rpx solid #e8e8e8;
+  font-size: 40rpx;
+  font-weight: 600;
+  padding: 10rpx 0;
+  color: var(--themecolor);
+}
+.goods_detail .goods_description {
+  display: flex;
+  padding: 20rpx 0;
+  border-bottom: 10rpx solid #e8e8e8;
+}
+.goods_detail .goods_description .goods_title {
+  flex: 5;
+  padding: 0 10rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.goods_detail .goods_description .goods_collect {
+  flex: 1;
+  text-align: center;
+  border-left: 2rpx solid #96696b;
+}
+.goods_detail .goods_description .goods_base {
+  font-size: 30rpx;
+  color: #96696b;
+}
+.goods_detail .goods_detail_desc .goods_detail_title {
+  padding: 20rpx 0;
+  font-size: 40rpx;
+  font-weight: 600;
+  color: var(--themecolor);
+}
+.goods_detail .bottom_tab {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 90rpx;
+  background-color: #fff;
+  border: 2rpx solid #e8e8e8;
+}
+.goods_detail .bottom_tab .tab_left {
+  flex: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 24rpx;
+}
+.goods_detail .bottom_tab .tab_left .tab_item {
+  flex: 1;
+  position: relative;
+}
+.goods_detail .bottom_tab .tab_left .tab_item button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.goods_detail .bottom_tab .tab_right {
+  flex: 5;
+  display: flex;
+  height: 100%;
+}
+.goods_detail .bottom_tab .tab_right .add_cart {
+  flex: 1;
+  background-color: #ffa500;
+}
+.goods_detail .bottom_tab .tab_right .go_buy {
+  flex: 1;
+  background-color: #eb4450;
+}
+.goods_detail .bottom_tab .tab_right .bottom_bar_base {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 600;
+}

@@ -1,2 +1,46 @@
-<!--pages/goods_detail/goods_detail.wxml-->
-<text>pages/goods_detail/goods_detail.wxml</text>
+<view class="goods_detail">
+    <!-- 轮播图区域 -->
+    <swiper autoplay circular indicator-dots>
+        <swiper-item class="swiper_item" wx:for="{{goods.pics}}" wx:key="pics_id">
+            <image mode="widthFix" src="{{item.pics_mid}}" />
+        </swiper-item>
+    </swiper>
+    <!-- 商品标题区域 -->
+    <view class="goods_price">¥{{goods.goods_price}}</view>
+    <view class="goods_description">
+        <view class="goods_base goods_title">{{goods.goods_name}}</view>
+        <view class="goods_base goods_collect">
+            <view class="iconfont icon-iconfontzhizuobiaozhun23"></view>
+            <view>收藏</view>
+        </view>
+    </view>
+    <!-- 商品详情区域 -->
+    <view class="goods_detail_desc">
+        <view class="goods_detail_title">商品详情</view>
+        <rich-text nodes="{{goods.goods_introduce}}"></rich-text>
+    </view>
+
+    <!-- 底部tab栏区域 -->
+    <view class="bottom_tab">
+        <view class="tab_left">
+            <view class="tab_item">
+                <view class="iconfont icon-kefu"></view>
+                <view>联系客服</view>
+                <button open-type="contact"></button>
+            </view>
+            <view class="tab_item">
+                <view class="iconfont icon-fenxiang"></view>
+                <view>分享</view>
+                <button open-type="share"></button>
+            </view>
+            <view class="tab_item" bindtap="handleGoCart">
+                <view class="iconfont icon-gouwuche"></view>
+                <view>购物车</view>
+            </view>
+        </view>
+        <view class="tab_right">
+            <view class="bottom_bar_base add_cart" bindtap="handleAddCart">加入购物车</view>
+            <view class="bottom_bar_base go_buy">立即购买</view>
+        </view>
+    </view>
+</view>

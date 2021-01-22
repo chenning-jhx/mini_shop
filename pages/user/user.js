@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userInfo: {}
   },
 
   /**
@@ -26,7 +26,30 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.getUserInfo()
+  },
 
+  //获取用户信息
+  getUserInfo() {
+    const userInfo = wx.getStorageSync("userInfo");
+    this.setData({
+      userInfo
+    })
+  },
+
+  //点击跳转登陆页面
+  handleLogin() {
+    wx.navigateTo({
+      url: '../login/login'
+    })
+  },
+
+  //监听订单点击事件
+  handleUserOrder(e) {
+    const {type} = e.currentTarget.dataset;
+    wx.navigateTo({
+      url: '../order/order?type='+ type
+    });
   },
 
   /**

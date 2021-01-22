@@ -1,6 +1,7 @@
 .goods_list .good_info {
   display: flex;
   padding: 10rpx;
+  border-bottom: 4rpx solid #eee;
 }
 .goods_list .good_info .good_image {
   flex: 2;

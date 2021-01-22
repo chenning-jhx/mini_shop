@@ -1,2 +1,38 @@
-<!--pages/pay/pay.wxml-->
-<text>pages/pay/pay.wxml</text>
+<view class="cart">
+    <view class="address_show">
+        <view class="address_userInfo">
+            <view class="user_name">收货人:{{address.userName}}</view>
+            <view class="use_mMobile">{{address.telNumber}}</view>
+        </view>
+        <view class="user_address">
+            {{address.provinceName+address.cityName+address.countyName+address.detailInfo}}
+        </view>
+    </view>
+    <view class="goods_cart">
+        <view class="goods_cart_title">优购生活馆</view>
+        <view class="goods_show" wx:for="{{cartGoods}}" wx:key="goods_id">
+            <view class="goods_info">
+                <view class="goods_image">
+                    <image mode="widthFix" src="{{item.goods_small_logo}}" />
+                </view>
+                <view class="goods_desc">
+                    <view class="goods_name">{{item.goods_name}}</view>
+                    <view class="goods_other">
+                        <view class="goods_price">¥{{item.goods_price}}</view>
+                        <view class="buy_num">
+                            <view class="goods_num">x{{item.num}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 底部工具栏区域 -->
+    <view class="bottom-bar">
+        <view class="total_info">
+            <view class="total_price">合计:{{totalPrice}}</view>
+            <view class="progress">包含运费</view>
+        </view>
+        <view class="total_num" bindtap="handleOrderPay">支付({{totalNum}})</view>
+    </view>
+</view>

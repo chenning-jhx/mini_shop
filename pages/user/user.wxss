@@ -1,1 +1,158 @@
-/* pages/user/user.wxss */
+.userCenter {
+  position: relative;
+  height: 110vh;
+  background-color: #edece8;
+}
+.userCenter .user_info {
+  height: 40vh;
+  background-color: var(--themecolor);
+}
+.userCenter .user_info .user_desc {
+  position: relative;
+}
+.userCenter .user_info .user_desc .user_bg_image image {
+  width: 100%;
+  filter: blur(4px);
+}
+.userCenter .user_info .user_desc .user_info_detail {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.userCenter .user_info .user_desc .user_info_detail image {
+  width: 150rpx;
+  border-radius: 50%;
+}
+.userCenter .user_info .user_desc .user_info_detail .nick_name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40rpx;
+  width: 150rpx;
+  height: 60rpx;
+  font-size: 40rpx;
+  font-weight: 400;
+  color: #fff;
+}
+.userCenter .user_info .login_module {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.userCenter .user_info .login_module image {
+  width: 150rpx;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.userCenter .user_info .login_module .login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40rpx;
+  width: 150rpx;
+  height: 60rpx;
+  font-size: 40rpx;
+  font-weight: 400;
+  color: #fff;
+  border: 2rpx solid #fff;
+}
+.userCenter .user_other {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+}
+.userCenter .user_other .user_collect_relevant {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rpx;
+  height: 90rpx;
+  background-color: #fff;
+}
+.userCenter .user_other .user_collect_relevant .collent_shop {
+  flex: 1;
+}
+.userCenter .user_other .user_collect_relevant .collent_shop .collent_shop_count {
+  text-align: center;
+}
+.userCenter .user_other .user_collect_relevant .collent_shop .collent_name {
+  text-align: center;
+}
+.userCenter .user_other .user_order {
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+.userCenter .user_other .user_order .user_order_title {
+  padding: 20rpx;
+  border-bottom: 2rpx solid #edece8;
+}
+.userCenter .user_other .user_order .user_order_detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rpx;
+  height: 120rpx;
+}
+.userCenter .user_other .user_order .user_order_detail .user_order_cate {
+  flex: 1;
+}
+.userCenter .user_other .user_order .user_order_detail .user_order_cate .iconfont {
+  font-size: 40rpx;
+  text-align: center;
+}
+.userCenter .user_other .user_order .user_order_detail .user_order_cate .cate_name {
+  text-align: center;
+}
+.userCenter .user_other .user_address {
+  display: flex;
+  margin-top: 20rpx;
+  padding: 20rpx;
+  background-color: #fff;
+}
+.userCenter .user_other .user_address .user_address_left {
+  flex: 1;
+  text-align: left;
+}
+.userCenter .user_other .user_address .icon-more {
+  flex: 1;
+  text-align: right;
+}
+.userCenter .user_other .user_complaint {
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.userCenter .user_other .user_complaint .customer_service {
+  display: flex;
+  padding: 20rpx;
+  border: 2rpx solid #edece8;
+}
+.userCenter .user_other .user_complaint .customer_service .customer_service_title {
+  flex: 1;
+  text-align: left;
+}
+.userCenter .user_other .user_complaint .customer_service .customer_service_mobile {
+  flex: 1;
+  text-align: right;
+}
+.userCenter .user_other .user_complaint .customer_service .icon-more {
+  flex: 1;
+  text-align: right;
+}
+.userCenter .user_other .user_share {
+  display: flex;
+  margin-top: 20rpx;
+  padding: 20rpx;
+  background-color: #fff;
+}
+.userCenter .user_other .user_share .user_share_title {
+  flex: 1;
+  text-align: left;
+}
+.userCenter .user_other .user_share .icon-more {
+  flex: 1;
+  text-align: right;
+}

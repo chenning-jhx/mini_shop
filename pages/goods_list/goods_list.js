@@ -36,21 +36,33 @@ Page({
     pagesize: 10
   },
 
+  //总页数
+  totalPage: 0,
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.queryData.cid = options.cat_id
-    this.getGoodsListData()
+    this.queryData.cid = options.cat_id;
+    this.getGoodsListData();
   },
 
   //获取商品列表数据
   async getGoodsListData() {
     const res = await request({ url: "/goods/search", data: this.queryData })
-    const goodsList = res.data.message.goods
+    const goodsList = res.data.message.goods;
+
+    //获取总页数
+    const total = res.data.message.total;
+    this.totalPage = Math.ceil(total / this.queryData.pagesize);
+
+    //第一次请求数组和下拉请求的数组拼接
     this.setData({
-      goodsList
+      goodsList: [...this.data.goodsList,...res.data.message.goods]
     })
+
+    //关闭下拉刷新
+    wx.stopPullDownRefresh()
   },
 
   //监听tab栏点击事件
@@ -64,6 +76,39 @@ Page({
       tabs
     })
   },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    //判断页数有没有到最后一页
+    if(this.queryData.pagenum >= this.totalPage) {
+      wx.showToast({title:"没有更多商品！"});
+    }else {
+      this.queryData.pagenum++;
+      this.getGoodsListData();
+    }
+  },
+
+    /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    this.setData({
+      goodsList: []
+    });
+    this.queryData.pagenum = 1;
+    this.getGoodsListData();
+  },
+
+  //点击调整商品详情页面
+  handleGoodDetail(e) {
+    const {goods_id} = e.currentTarget.dataset;
+    wx.navigateTo({
+      url: '../goods_detail/goods_detail?goods_id='+ goods_id
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -92,19 +137,6 @@ Page({
 
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
 
   /**
    * 用户点击右上角分享

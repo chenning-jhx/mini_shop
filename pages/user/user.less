@@ -1,0 +1,160 @@
+.userCenter {
+    position: relative;
+    height: 110vh;
+    background-color: #edece8;
+   .user_info {
+       height: 40vh;
+       background-color: var(--themecolor);
+      .user_desc {
+        position: relative;
+        .user_bg_image {
+            image {
+                width: 100%;
+                filter: blur(4px);
+            }
+        }
+        .user_info_detail {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            image {
+              width: 150rpx;
+              border-radius: 50%;
+            }
+            .nick_name {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-top: 40rpx;
+              width: 150rpx;
+              height: 60rpx;
+              font-size: 40rpx;
+              font-weight: 400;
+              color: #fff;
+            }
+        }
+      }
+      .login_module {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        image {
+            width: 150rpx;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+        .login {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40rpx;
+            width: 150rpx;
+            height: 60rpx;
+            font-size: 40rpx;
+            font-weight: 400;
+            color: #fff;
+            border: 2rpx solid #fff;
+        }
+      } 
+   } 
+   .user_other {
+       position: absolute;
+       top: 35%;
+       left: 50%;
+       transform: translateX(-50%);
+       width: 95%;
+    .user_collect_relevant {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10rpx;
+        height: 90rpx;
+        background-color: #fff;
+        .collent_shop {
+            flex: 1;
+            .collent_shop_count {
+                text-align: center;
+            }
+            .collent_name {
+                text-align: center;
+            }
+        }
+    }
+    .user_order {
+        margin-top: 20rpx;
+        background-color: #fff;
+        .user_order_title {
+            padding: 20rpx;
+            border-bottom: 2rpx solid #edece8;
+        }
+        .user_order_detail {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10rpx;
+            height: 120rpx;
+            .user_order_cate {
+                flex: 1;
+                .iconfont {
+                    font-size: 40rpx;
+                    text-align: center;
+                }
+                .cate_name {
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .user_address {
+        display: flex;
+        margin-top: 20rpx;
+        padding: 20rpx;
+        background-color: #fff;
+        .user_address_left {
+         flex: 1;
+         text-align: left;
+        }
+        .icon-more {
+         flex: 1;
+         text-align: right;
+        }
+    }
+    .user_complaint {
+        background-color: #fff;
+        margin-top: 20rpx;
+        .customer_service {
+            display: flex;
+            padding: 20rpx;
+            border: 2rpx solid #edece8;
+            .customer_service_title {
+                flex: 1;
+                text-align: left;
+            }
+            .customer_service_mobile {
+                flex: 1;
+                text-align: right;
+            }
+            .icon-more {
+                flex: 1;
+                text-align: right;
+            }
+        }
+    }
+    .user_share {
+        display: flex;
+        margin-top: 20rpx;
+        padding: 20rpx;
+        background-color: #fff;
+        .user_share_title {
+            flex: 1;
+            text-align: left;
+        }
+        .icon-more {
+            flex: 1;
+            text-align: right;
+        }
+    }
+   }
+}

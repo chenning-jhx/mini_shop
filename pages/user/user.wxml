@@ -1,2 +1,80 @@
-<!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<view class="userCenter">
+    <view class="user_info">
+        <view class="user_desc"  wx:if="{{userInfo.nickName}}">
+            <view class="user_bg_image">
+                <image mode="scaleToFill" src="{{userInfo.avatarUrl}}" />
+            </view>
+            <view class="user_info_detail">
+                <image mode="widthFix" src="{{userInfo.avatarUrl}}" />
+                <view class="nick_name">{{userInfo.nickName}}</view>
+            </view>
+        </view>
+        <view class="login_module" wx:else>
+            <image mode="widthFix" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fku.90sjimg.com%2Felement_origin_min_pic%2F01%2F34%2F30%2F95573ba847ecd73.jpg&refer=http%3A%2F%2Fku.90sjimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1613886294&t=409ee41e51af36142307adea9ef6386b" />
+            <view class="login" bindtap="handleLogin">登陆</view>
+        </view>
+    </view>
+    <view class="user_other">
+        <view class="user_collect_relevant">
+            <view class="collent_shop">
+                <view class="collent_shop_count">0</view>
+                <view class="collent_name">收藏的店铺</view>
+            </view>
+            <view class="collent_shop">
+                <view class="collent_shop_count">2</view>
+                <view class="collent_name">收藏的商品</view>
+            </view>
+            <view class="collent_shop">
+                <view class="collent_shop_count">0</view>
+                <view class="collent_name">关注的商品</view>
+            </view>
+            <view class="collent_shop">
+                <view class="collent_shop_count">0</view>
+                <view class="collent_name">我的足迹</view>
+            </view>
+        </view>
+        <view class="user_order">
+            <view class="user_order_title">我的订单</view>
+            <view class="user_order_detail">
+                <view class="user_order_cate" bindtap="handleUserOrder" data-type="1">
+                    <view class="iconfont icon-dingdan"></view>
+                    <view class="cate_name">全部订单</view>
+                </view>
+                <view class="user_order_cate" bindtap="handleUserOrder" data-type="2">
+                    <view class="iconfont icon-daifukuan"></view>
+                    <view class="cate_name">待付款</view>
+                </view>
+                <view class="user_order_cate" bindtap="handleUserOrder" data-type="3">
+                    <view class="iconfont icon-daishouhuo"></view>
+                    <view class="cate_name">待收货</view>
+                </view>
+                <view class="user_order_cate">
+                    <view class="iconfont icon-icon5"></view>
+                    <view class="cate_name">退款/退货</view>
+                </view>
+            </view>
+        </view>
+        <view class="user_address">
+            <view class="user_address_left">收货地址管理</view>
+            <view class="iconfont icon-more"></view>
+        </view>
+        <view class="user_complaint">
+            <view class="customer_service">
+                <view class="customer_service_title">联系客服</view>
+                <view class="customer_service_mobile">400-888-8888</view>
+            </view>
+            <view class="customer_service">
+                <view class="customer_service_title">意见反馈</view>
+                <view class="iconfont icon-more"></view>
+            </view>
+            <view class="customer_service">
+                <view class="customer_service_title">关于我们</view>
+                <view class="iconfont icon-more"></view>
+            </view>
+        </view>
+        <view class="user_share">
+            <view class="user_share_title">把应用推荐给其他人</view>
+            <view class="iconfont icon-more"></view>
+        </view>
+    </view>
+</view>

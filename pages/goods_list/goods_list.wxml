@@ -7,7 +7,9 @@
         <block wx:if="{{tabs[0].isActived}}">
             <view class="good_info"
             wx:for="{{goodsList}}"
-            wx:key="goods_id">
+            wx:key="goods_id"
+            bindtap="handleGoodDetail"
+            data-goods_id="{{item.goods_id}}">
                 <!-- 左侧商品图片区域 -->
                 <view class="good_image">
                     <image mode="widthFix" src="{{item.goods_small_logo ? item.goods_small_logo : lasyImage}}"/>
