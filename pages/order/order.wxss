@@ -1,1 +1,39 @@
-/* pages/order/order.wxss */
+.order .order_detail {
+  padding: 20rpx;
+  border-bottom: 2rpx solid #ccc;
+}
+.order .order_detail .order_num {
+  display: flex;
+}
+.order .order_detail .order_num .order_num_title {
+  flex: 1;
+  text-align: left;
+}
+.order .order_detail .order_num .order_num_detail {
+  flex: 1;
+  text-align: right;
+}
+.order .order_detail .order_price {
+  display: flex;
+  padding: 10rpx 0;
+}
+.order .order_detail .order_price .order_price_title {
+  flex: 1;
+  text-align: left;
+}
+.order .order_detail .order_price .order_price_detail {
+  flex: 1;
+  text-align: right;
+  color: var(--themecolor);
+}
+.order .order_detail .order_data {
+  display: flex;
+}
+.order .order_detail .order_data .order_data_title {
+  flex: 1;
+  text-align: left;
+}
+.order .order_detail .order_data .order_data_detail {
+  flex: 1;
+  text-align: right;
+}
