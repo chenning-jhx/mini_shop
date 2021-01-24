@@ -1,0 +1,16 @@
+.loadImg {
+    position: relative;
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.loadImg .image {
+    width: 100%;
+    height: 100%;
+}
+
+.loadImg .icon {
+    position: absolute;
+    top: -15rpx;
+    right: -15rpx;
+}

@@ -1,2 +1,30 @@
-<!--pages/feedback/feedback.wxml-->
-<text>pages/feedback/feedback.wxml</text>
+<view class="feedback">
+    <view class="feedback_tabs">
+        <tabs tabs="{{tabs}}"></tabs>
+    </view>
+    <view class="feedback_cate">
+        <view class="cate_title">问题的种类</view>
+        <view class="cate_content">
+            <view class="cate_content_item" wx:for="{{cateData}}" wx:key="id">{{item.value}}</view>
+        </view>
+    </view>
+    <view class="feedback_edit">
+        <textarea placeholder="请描述一下您的问题"></textarea>
+        <view class="image_add">
+            <button bindtap="handleAddImage">+</button>
+            <view class="load_image" 
+            wx:for="{{upImageList}}"
+            wx:key="*this"
+            bindtap="handleRemoveImg"
+            data-index="{{index}}">
+                <loadImg src="{{item}}"></loadImg>
+            </view>
+        </view>
+    </view>
+    <view class="sub_button">
+        <button type="warn">
+            <icon class="" type="success_no_circle" size="23" color="#fff" />
+            提交
+        </button>
+    </view>
+</view>

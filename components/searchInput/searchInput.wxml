@@ -1,5 +1,5 @@
 <view class="search">
-  <view class="search-input">
+  <view class="search-input" bindtap="handleSearch">
     <view class="search-nav">搜索</view>
   </view>
 </view>

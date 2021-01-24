@@ -113,6 +113,24 @@
           "pathName": "pages/order/order",
           "query": "type=1",
           "scene": null
+        },
+        {
+          "name": "收藏",
+          "pathName": "pages/collect/collect",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "搜索页面",
+          "pathName": "pages/search/search",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "意见反馈",
+          "pathName": "pages/feedback/feedback",
+          "query": "",
+          "scene": null
         }
       ]
     }

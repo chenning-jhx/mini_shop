@@ -1,1 +1,61 @@
-/* pages/feedback/feedback.wxss */
+page {
+  background-color: #eeeeee;
+  color: #666;
+}
+.feedback .feedback_tabs {
+  background-color: #fff;
+}
+.feedback .feedback_cate {
+  margin-top: 20rpx;
+  padding: 0 20rpx;
+}
+.feedback .feedback_cate .cate_title {
+  padding: 10rpx;
+}
+.feedback .feedback_cate .cate_content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10rpx;
+}
+.feedback .feedback_cate .cate_content .cate_content_item {
+  margin: 10rpx;
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background-color: #fff;
+}
+.feedback .feedback_edit {
+  padding: 0 20rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.feedback .feedback_edit textarea {
+  padding: 20rpx;
+}
+.feedback .feedback_edit .image_add {
+  display: flex;
+  flex-wrap: wrap;
+}
+.feedback .feedback_edit .image_add button {
+  width: 100rpx;
+  height: 100rpx;
+  font-size: 60rpx;
+  text-align: 100px;
+  line-height: 100rpx;
+  color: #cccccc;
+  margin: 0 0 15rpx 15rpx;
+}
+.feedback .feedback_edit .image_add .load_image {
+  margin-left: 20rpx;
+}
+.feedback .sub_button {
+  padding: 0 20rpx;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: flex-end;
+}
+.feedback .sub_button button {
+  margin: 0;
+  width: 30%;
+}

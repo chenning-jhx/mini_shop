@@ -1,2 +1,15 @@
-<!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<view class="search_page">
+    <view class="search_input">
+        <input value="" type="text" placeholder="请输入查询内容" bindinput="handleInput"/>
+        <button>取消</button>
+    </view>
+    <view class="seach_content">
+        <view class="search_content_item"
+        wx:for="{{searchResult}}"
+        wx:key="goods_id"
+        bindtap="handleGoodsDetail"
+        data-goods_id="{{item.goods_id}}">
+        {{item.goods_name}}
+        </view>
+    </view>
+</view>

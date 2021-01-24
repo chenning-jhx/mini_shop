@@ -5,21 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: {}
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+    userInfo: {},
+    collectNum: 0
   },
 
   /**
@@ -27,6 +14,10 @@ Page({
    */
   onShow: function () {
     this.getUserInfo()
+    const collect = wx.getStorageSync("collect")||[];
+    this.setData({
+      collectNum: collect.length
+    })
   },
 
   //获取用户信息
@@ -44,46 +35,40 @@ Page({
     })
   },
 
-  //监听订单点击事件
-  handleUserOrder(e) {
-    const {type} = e.currentTarget.dataset;
+  //查询缓存中是否存在token
+  isSureToken() {
+    //查询下缓存中是否有token值
+    const token = wx.getStorageSync("token");
+    // 如果没有跳转登录页面
+    if (!token) {
+      wx.navigateTo({
+        url: '../login/login'
+      });
+    }
+  },
+
+  //点击跳转收藏页面
+  handleCollect() {
+    this.isSureToken();
     wx.navigateTo({
-      url: '../order/order?type='+ type
+      url: '../collect/collect'
     });
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  //监听订单点击事件
+  handleUserOrder(e) {
+    this.isSureToken();
+    const { type } = e.currentTarget.dataset;
+    wx.navigateTo({
+      url: '../order/order?type=' + type
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  //点击跳转反馈意见页面
+  handleFeedBack() {
+    this.isSureToken();
+    wx.navigateTo({
+      url: '../feedback/feedback'
+    });
   }
 })

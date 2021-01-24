@@ -2,15 +2,15 @@
     <!-- 轮播图区域 -->
     <swiper autoplay circular indicator-dots>
         <swiper-item class="swiper_item" wx:for="{{goods.pics}}" wx:key="pics_id">
-            <image mode="widthFix" src="{{item.pics_mid}}" />
+            <image mode="widthFix" src="{{item.pics_mid}}" bindtap="handlePreviewImage" data-url="{{item.pics_mid}}"/>
         </swiper-item>
     </swiper>
     <!-- 商品标题区域 -->
     <view class="goods_price">¥{{goods.goods_price}}</view>
     <view class="goods_description">
         <view class="goods_base goods_title">{{goods.goods_name}}</view>
-        <view class="goods_base goods_collect">
-            <view class="iconfont icon-iconfontzhizuobiaozhun23"></view>
+        <view class="goods_base goods_collect" bindtap="handleCollect">
+            <view class="iconfont {{isCollected?'icon-shoucang1':'icon-shoucang'}}"></view>
             <view>收藏</view>
         </view>
     </view>

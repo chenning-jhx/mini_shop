@@ -20,8 +20,8 @@
                 <view class="collent_shop_count">0</view>
                 <view class="collent_name">收藏的店铺</view>
             </view>
-            <view class="collent_shop">
-                <view class="collent_shop_count">2</view>
+            <view class="collent_shop" bindtap="handleCollect">
+                <view class="collent_shop_count">{{collectNum}}</view>
                 <view class="collent_name">收藏的商品</view>
             </view>
             <view class="collent_shop">
@@ -63,7 +63,7 @@
                 <view class="customer_service_title">联系客服</view>
                 <view class="customer_service_mobile">400-888-8888</view>
             </view>
-            <view class="customer_service">
+            <view class="customer_service" bindtap="handleFeedBack">
                 <view class="customer_service_title">意见反馈</view>
                 <view class="iconfont icon-more"></view>
             </view>

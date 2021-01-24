@@ -1,5 +1,5 @@
 import { request } from '../../request/index'
-import regeneratorRuntime from '../../lib/runtime/runtime';
+import regeneratorRuntime from '../../lib/runtime/runtime'
 
 Page({
 
@@ -7,23 +7,29 @@ Page({
    * 页面的初始数据
    */
   data: {
-    goods: {}
+    goods: {},
+    isCollected: false
   },
 
   //全局变量
   goodInfo: {},
+
   /**
-   * 生命周期函数--监听页面加载
+   * 生命周期函数--监听页面显示
    */
-  onLoad: function (options) {
-    const goods_id = options;
-    this.getGoodsDetailData(goods_id);
+  onShow() {
+    let curPages =  getCurrentPages();
+    let goods_id = curPages[curPages.length-1].options.goods_id; 
+    this.getGoodsDetailData(goods_id); 
   },
 
   //获取商品详情数据
   async getGoodsDetailData(goods_id) {
-    const res = await request({url:"/goods/detail",data: goods_id})
+    const res = await request({url:"/goods/detail",data: {goods_id}})
     this.goodInfo = res.data.message;
+    //缓存中获取收藏商品数组
+    const collect = wx.getStorageSync("collect")||[];
+    let isCollected = collect.some(item => item.goods_id === this.goodInfo.goods_id)
     let goods = {};
     goods["goods_id"] = res.data.message.goods_id;
     goods["pics"] = res.data.message.pics;
@@ -31,7 +37,8 @@ Page({
     goods["goods_price"] = res.data.message.goods_price;
     goods["goods_introduce"] = res.data.message.goods_introduce;
     this.setData({
-      goods
+      goods,
+      isCollected
     })
   },
 
@@ -58,52 +65,49 @@ Page({
     wx.showToast({title: "添加购物车成功！"})
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  //点击轮播图，预览图片
+  handlePreviewImage(e) {
+    let { url } = e.currentTarget.dataset;
+    let urls = this.data.goods.pics.map(item => item.pics_mid)
+    wx.previewImage({
+      current: url,
+      urls: urls,
+      success: (result)=>{
+        console.log(result);
+      }
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  //监听点击收藏
+  handleCollect() {
+    let isCollected = false;
+    //判断缓存中是否有收藏商品数组
+    const collect = wx.getStorageSync("collect")||[];
+    let index = collect.findIndex(item => item.goods_id === this.goodInfo.goods_id)
+    if(index!= -1) {
+      collect.splice(index,1);
+      isCollected = false;
+      this.setData({
+        isCollected
+      })
+      wx.setStorageSync("collect", collect);
+      wx.showToast({
+        title: '取消收藏',
+        icon: 'success',
+        mask: false
+      });
+    } else {
+      collect.push(this.goodInfo);
+      isCollected = true;
+      this.setData({
+        isCollected
+      })
+      wx.setStorageSync("collect", collect);
+      wx.showToast({
+        title: '收藏成功',
+        icon: 'success',
+        mask: false
+      });
+    }
   }
 })

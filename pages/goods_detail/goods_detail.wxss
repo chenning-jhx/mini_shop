@@ -40,6 +40,9 @@ page {
   text-align: center;
   border-left: 2rpx solid #96696b;
 }
+.goods_detail .goods_description .goods_collect .icon-shoucang1 {
+  color: red;
+}
 .goods_detail .goods_description .goods_base {
   font-size: 30rpx;
   color: #96696b;

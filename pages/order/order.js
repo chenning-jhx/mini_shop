@@ -1,5 +1,6 @@
 import { request } from '../../request/index'
-import regeneratorRuntime from '../../lib/runtime/runtime';
+import regeneratorRuntime, { async } from '../../lib/runtime/runtime'
+import { formatDate } from '../../utils/formateDate.js'
 
 Page({
 
@@ -31,21 +32,7 @@ Page({
     ],
     orderData: []
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
+  
   /**
    * 生命周期函数--监听页面显示
    */
@@ -54,68 +41,47 @@ Page({
   },
 
   //获取订单数据
-  async getOrderData() {
-    //查询下缓存中是否有token值
-    const token = wx.getStorageSync("token");
-    if(!token) {
-      wx.navigateTo({
-        url: '../auth/auth'
-      });
-    }
-
+  getOrderData() {
     //获取用户传递过来的type参数
-    const { options } =  getCurrentPages()[0];
-    const res = await request({url:"/my/orders/all",data:options})
-    const orderData = res.data.message.orders
-    this.setData({
-      orderData
-    })
-  },
-
-  //监听tabs点击事件
-  handeleTap(e) {
-    const { index } = e.detail;
-    const { tabs } = this.data;
-    tabs.forEach((item, i) => {
-      i === index ? item.isActived = true : item.isActived = false
+    const currentpages =  getCurrentPages();
+    const type = currentpages[currentpages.length-1].options.type;
+    this.requestData(type);
+    const {tabs} = this.data;
+    tabs.forEach((item, index) => {
+      index === type-1 ? item.isActived = true : item.isActived = false
     })
     this.setData({
       tabs
     })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
+  //监听tabs点击事件
+  handeleTap(e) {
+    const {index} = e.detail;
+    const {tabs} = this.data;
+    let type = index + 1;
+    this.requestData(type);
+    tabs.forEach((item, i) => {
+      i === index ? item.isActived = true : item.isActived = false
+    })
 
+    //重新发起请求
+    this.requestData(type)
+    this.setData({
+      tabs
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  //发起网络请求数据
+  async requestData(type) {
+    const res = await request({url:"/my/orders/all",data:{type}})
+    const orderData = res.data.message.orders
+    orderData.forEach(item => {
+      let date = new Date(item.create_time*1000)
+      item.create_time = formatDate(date, "yyyy-MM-dd hh:mm:ss")
+    })
+    this.setData({
+      orderData
+    })
   }
 })
