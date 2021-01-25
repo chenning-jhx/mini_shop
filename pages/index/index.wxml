@@ -5,7 +5,7 @@
   <view class="index_swiper">
     <swiper autoplay indicator-dots circular>
       <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
-        <image mode="widthFix" src="{{item.image_src}}" />
+        <image mode="widthFix" src="{{item.image_src}}"  bindtap="handleGoodsDetail" data-navigator_url="{{item.navigator_url}}"/>
       </swiper-item>
     </swiper>
   </view>
@@ -13,7 +13,7 @@
   <!-- 首页导航区域开始 -->
   <view class="index_nav">
     <view wx:for="{{navList}}" wx:key="name">
-      <image mode="widthFix" src="{{item.image_src}}" />
+    <image mode="widthFix" src="{{item.image_src}}"/>
     </view>
   </view>
   <!-- 首页导航区域结束 -->

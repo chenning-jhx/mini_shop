@@ -9,7 +9,7 @@
         </view>
     </view>
     <view class="feedback_edit">
-        <textarea placeholder="请描述一下您的问题"></textarea>
+        <textarea value="{{textVal}}" bindinput="handleTextarea" placeholder="请描述一下您的问题"></textarea>
         <view class="image_add">
             <button bindtap="handleAddImage">+</button>
             <view class="load_image" 
@@ -22,7 +22,7 @@
         </view>
     </view>
     <view class="sub_button">
-        <button type="warn">
+        <button type="warn" bindtap="handleSubmit">
             <icon class="" type="success_no_circle" size="23" color="#fff" />
             提交
         </button>
